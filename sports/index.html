@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sports Management Website</title>
+<style>
+  /* Reset & basics */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background: #f9f9f9;
+    color: #333;
+  }
+
+  /* Header styles */
+  header {
+    background: #004080;
+    color: white;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+
+  /* Nav styles */
+  nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav ul li {
+    margin-left: 1.5rem;
+  }
+
+  nav ul li:first-child {
+    margin-left: 0;
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+
+  nav a:hover, nav a:focus {
+    color: #ffcc00;
+    outline: none;
+  }
+
+  /* Responsive Nav */
+  @media (max-width: 768px) {
+    nav ul {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    nav ul li {
+      margin: 0.5rem 1rem;
+    }
+  }
+
+  /* Footer styles */
+  footer {
+    background: #222;
+    color: #ccc;
+    padding: 2rem 1.5rem;
+    margin-top: 3rem;
+  }
+
+  footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  footer .footer-links, 
+  footer .social-links, 
+  footer .footer-info {
+    flex: 1 1 250px;
+    margin: 0.5rem 1rem;
+  }
+
+  footer h3 {
+    color: #ffcc00;
+    margin-bottom: 1rem;
+  }
+
+  footer ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  footer ul li {
+    margin-bottom: 0.5rem;
+  }
+
+  footer ul li a {
+    color: #ccc;
+    text-decoration: none;
+  }
+
+  footer ul li a:hover, footer ul li a:focus {
+    color: #ffcc00;
+    outline: none;
+  }
+
+  footer .social-links a {
+    display: inline-block;
+    margin-right: 1rem;
+    font-size: 1.5rem;
+    color: #ccc;
+    transition: color 0.3s ease;
+    text-decoration: none;
+  }
+
+  footer .social-links a:hover, footer .social-links a:focus {
+    color: #ffcc00;
+    outline: none;
+  }
+
+  /* Small devices */
+  @media (max-width: 600px) {
+    footer .container {
+      flex-direction: column;
+      align-items: center;
+    }
+    footer .footer-links, 
+    footer .social-links, 
+    footer .footer-info {
+      margin: 1rem 0;
+      text-align: center;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1>SportsManage</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="sche.html">Schedules & Game Details</a></li>
+        <li><a href="communi.html">Communication with Team</a></li>
+        <li><a href="access.chtml">Access Resources</a></li>
+        <li><a href="payments.html">Payments</a></li>
+        <li><a href="news.html">News & Updates</a></li>
+        <li><a href="resultshtml">Results & Standings</a></li>
+        <li><a href="join.html">Join in Community</a></li>
+        <li><a href="login.html">Login / Sign In</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<style>
+  :root{
+    --brand:#004080;
+    --brand-2:#2b5876;
+    --accent:#ffcc00;
+    --ink:#1f2937;
+    --muted:#6b7280;
+    --bg:#f8fafc;
+    --card:#ffffff;
+    --success:#16a34a;
+    --danger:#dc2626;
+    --shadow: 0 8px 24px rgba(0,0,0,.12);
+    --radius: 16px;
+    --elev: 0 6px 20px rgba(0,0,0,.15);
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+    color:var(--ink);
+    background:var(--bg);
+  }
+
+  /* Header */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:linear-gradient(90deg,var(--brand),var(--brand-2));
+    color:#fff;
+    box-shadow:0 2px 12px rgba(0,0,0,.18);
+  }
+  .nav{
+    max-width:1200px; margin:auto; padding:12px 20px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .logo{
+    display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.4px;
+  }
+  .logo .dot{width:10px;height:10px;border-radius:999px;background:var(--accent);display:inline-block}
+  nav ul{display:flex; gap:20px; list-style:none; padding:0; margin:0}
+  nav a{
+    color:#fff; text-decoration:none; font-weight:600; opacity:.9;
+    padding:8px 12px; border-radius:10px; transition:all .25s ease;
+  }
+  nav a:hover{ background:rgba(255,255,255,.12); opacity:1; transform:translateY(-1px) }
+  .cta{
+    background:var(--accent); color:#2b2b2b; padding:10px 14px; border-radius:999px; font-weight:800;
+  }
+  .cta:hover{ transform:translateY(-1px) scale(1.02); }
+
+  /* Hero / Slideshow */
+  .hero{
+    position:relative; overflow:hidden; background:#000;
+  }
+  .carousel{
+    position:relative; height:min(72vh,720px);
+    max-height:80vh; width:100%;
+  }
+  .slide{
+    position:absolute; inset:0; opacity:0; transition:opacity .7s ease, transform .7s ease;
+    transform:scale(1.03);
+  }
+  .slide.active{ opacity:1; transform:scale(1); }
+  .slide img{
+    width:100%; height:100%; object-fit:cover; filter:brightness(.72) contrast(1.05);
+  }
+  .hero-overlay{
+    position:absolute; inset:0; display:flex; align-items:center; justify-content:center; text-align:center; color:#fff; padding:0 20px;
+  }
+  .hero-card{
+    max-width:960px; background:rgba(255,255,255,.08);
+    backdrop-filter: blur(6px);
+    padding:30px 28px; border-radius:var(--radius);
+    border:1px solid rgba(255,255,255,.15);
+    box-shadow: var(--shadow);
+    animation: floatIn .8s ease both .2s;
+  }
+  .hero h1{margin:0 0 10px; font-size:clamp(28px,4.2vw,48px); line-height:1.1}
+  .hero p{margin:0 0 18px; font-size:clamp(14px,2.2vw,18px); opacity:.95}
+  .hero-actions{display:flex; gap:12px; justify-content:center; flex-wrap:wrap}
+  .btn{
+    border:none; padding:12px 18px; border-radius:12px; font-weight:700; cursor:pointer;
+    transition:transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
+  }
+  .btn.primary{ background:var(--accent); color:#1f2937; }
+  .btn.primary:hover{ transform:translateY(-2px); box-shadow: var(--elev); }
+  .btn.ghost{ background:transparent; border:1px solid rgba(255,255,255,.4); color:#fff; }
+  .btn.ghost:hover{ background:rgba(255,255,255,.12); transform:translateY(-2px); }
+
+  .controls{
+    position:absolute; inset:0; display:flex; align-items:center; justify-content:space-between; padding:0 10px;
+  }
+  .control{
+    background:rgba(0,0,0,.35); border:1px solid rgba(255,255,255,.25); color:#fff;
+    width:44px; height:44px; display:grid; place-items:center; border-radius:50%;
+    cursor:pointer; transition:all .2s ease;
+  }
+  .control:hover{ background:rgba(0,0,0,.55); transform:scale(1.05); }
+  .dots{
+    position:absolute; left:0; right:0; bottom:14px; display:flex; justify-content:center; gap:8px;
+  }
+  .dot{
+    width:10px; height:10px; border-radius:999px; background:rgba(255,255,255,.5);
+    border:1px solid rgba(255,255,255,.6); cursor:pointer; transition:transform .2s ease, background .2s ease;
+  }
+  .dot.active{ background:var(--accent); transform:scale(1.2); }
+
+  /* Sections wrapper */
+  .shell{ max-width:1200px; margin:auto; padding:48px 20px; }
+
+  /* Live updates + Reminders */
+  .grid-2{ display:grid; grid-template-columns: 1.2fr .8fr; gap:28px; }
+  @media (max-width: 900px){ .grid-2{ grid-template-columns: 1fr; } }
+
+  .card{
+    background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow);
+    border:1px solid #e5e7eb; overflow:hidden;
+  }
+  .card-header{
+    display:flex; align-items:center; justify-content:space-between; gap:10px;
+    padding:16px 18px; background:linear-gradient(90deg,#ffffff, #f6f7fb);
+    border-bottom:1px solid #eef0f5;
+  }
+  .card-title{ margin:0; font-size:18px; font-weight:800; color:var(--brand); display:flex; align-items:center; gap:10px;}
+  .ticker{
+    position:relative; height:48px; overflow:hidden; background:#0b1220; color:#fff; display:flex; align-items:center;
+  }
+  .ticker-inner{
+    display:flex; flex-direction:column; position:absolute; left:0; right:0; animation: ticker 12s linear infinite;
+  }
+  .tick{ padding:10px 16px; display:flex; align-items:center; gap:10px; border-bottom:1px dashed rgba(255,255,255,.15); }
+  .pill{ padding:3px 10px; border-radius:999px; font-size:12px; font-weight:800; letter-spacing:.3px; }
+  .pill.live{ background:#ef4444; color:#fff; }
+  .pill.upd{ background:#f59e0b; color:#111827; }
+  .pill.info{ background:#22c55e; color:#0b1220; }
+
+  @keyframes ticker{
+    0%{ transform:translateY(0) }
+    33%{ transform:translateY(-48px) }
+    66%{ transform:translateY(-96px) }
+    100%{ transform:translateY(-144px) }
+  }
+
+  .reminders{ padding:16px 18px 6px; display:grid; gap:12px; }
+  .reminder{
+    display:flex; justify-content:space-between; align-items:center; gap:12px;
+    padding:12px 14px; border:1px solid #eef0f5; border-radius:12px; transition:all .2s ease;
+    background:#fff;
+  }
+  .reminder:hover{ transform:translateY(-2px); box-shadow: var(--elev); }
+  .rem-title{ font-weight:700; }
+  .rem-meta{ font-size:13px; color:var(--muted) }
+  .badge{
+    padding:4px 10px; border-radius:999px; font-size:12px; font-weight:800;
+    background:#eef2ff; color:#3730a3;
+  }
+
+  /* About */
+  .about{ display:grid; grid-template-columns: 1.1fr .9fr; gap:28px; align-items:center; }
+  @media (max-width: 900px){ .about{ grid-template-columns: 1fr; } }
+  .about img{ width:100%; border-radius:var(--radius); box-shadow: var(--shadow); }
+  .lead{ font-size:18px; color:#374151 }
+  .icon-list{ display:grid; gap:10px; margin-top:10px }
+  .icon-list li{ list-style:none; display:flex; align-items:center; gap:10px }
+  .check{ color:#16a34a; font-weight:900 }
+
+  /* Testimonials */
+  .testi-grid{
+    display:grid; grid-template-columns: repeat(3, 1fr); gap:20px;
+  }
+  @media (max-width: 1000px){ .testi-grid{ grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px){ .testi-grid{ grid-template-columns: 1fr; } }
+  .testi{
+    background:linear-gradient(180deg,#ffffff, #f8f9ff);
+    border:1px solid #eef0f5; border-radius:var(--radius); padding:18px; box-shadow:var(--shadow);
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .testi:hover{ transform:translateY(-4px); box-shadow: var(--elev); }
+  .stars{ color:#f59e0b; letter-spacing:1px }
+  .author{ display:flex; align-items:center; gap:12px; margin-top:12px }
+  .avatar{ width:42px; height:42px; border-radius:50%; object-fit:cover; }
+
+  /* Contact */
+  .contact{
+    display:grid; grid-template-columns: 1.2fr .8fr; gap:28px;
+  }
+  @media (max-width: 900px){ .contact{ grid-template-columns: 1fr; } }
+  form{
+    background:#fff; border:1px solid #eef0f5; border-radius:var(--radius); padding:18px; box-shadow:var(--shadow);
+  }
+  label{ font-weight:700; font-size:14px; color:#374151 }
+  input, textarea{
+    width:100%; padding:12px 14px; border:1px solid #e5e7eb; border-radius:12px; outline:none; transition:border .2s ease, box-shadow .2s ease;
+    font:inherit; color:inherit; background:#fff;
+  }
+  textarea{ min-height:120px; resize:vertical }
+  input:focus, textarea:focus{ border-color:#94a3b8; box-shadow:0 0 0 4px rgba(148,163,184,.2) }
+  .row{ display:grid; grid-template-columns: 1fr 1fr; gap:12px }
+  @media (max-width:640px){ .row{ grid-template-columns:1fr } }
+  .submit{
+    margin-top:10px; background:var(--brand); color:#fff;
+  }
+  .submit:hover{ background:#083a7a; transform:translateY(-1px) }
+  .contact-card{
+    padding:18px; background:#fff; border:1px solid #eef0f5; border-radius:var(--radius); box-shadow:var(--shadow);
+  }
+  .contact-item{ display:flex; gap:12px; align-items:flex-start; padding:8px 0 }
+  .contact-item .dot{ background:var(--brand) }
+
+  /* Footer */
+  footer{
+    margin-top:40px; background:#0b1220; color:#c7d2fe;
+  }
+  .foot{
+    max-width:1200px; margin:auto; padding:26px 20px;
+    display:flex; flex-wrap:wrap; gap:18px; align-items:center; justify-content:space-between;
+  }
+  .foot a{ color:#c7d2fe; text-decoration:none; opacity:.9 }
+  .foot a:hover{ opacity:1; text-decoration:underline }
+  .copy{ color:#9aa6f3; font-size:14px }
+
+  @keyframes floatIn{
+    from{ opacity:0; transform: translateY(8px) scale(.98) }
+    to  { opacity:1; transform: translateY(0) scale(1) }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">
+      <span class="dot"></span>
+      <span>SportsManage</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#updates">Live Updates</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#reminders">Reminders</a></li>
+        <li><a href="#contact" class="cta">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO / SLIDESHOW -->
+<section id="home" class="hero">
+  <div class="carousel" aria-label="Highlights">
+    <!-- Slides (use your own images as needed) -->
+    <div class="slide active">
+      <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=1600&auto=format&fit=crop" alt="Soccer ball on field">
+    </div>
+    <div class="slide">
+      <img src="https://images.unsplash.com/photo-1509228627152-72ae9ae6848d?q=80&w=1600&auto=format&fit=crop" alt="Running track">
+    </div>
+    <div class="slide">
+      <img src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?q=80&w=1600&auto=format&fit=crop" alt="Stadium floodlights">
+    </div>
+
+    <div class="controls" aria-hidden="false">
+      <button class="control" id="prev" aria-label="Previous slide">⟨</button>
+      <button class="control" id="next" aria-label="Next slide">⟩</button>
+    </div>
+
+    <div class="dots" role="tablist" aria-label="Slide indicators">
+      <button class="dot active" aria-label="Go to slide 1"></button>
+      <button class="dot" aria-label="Go to slide 2"></button>
+      <button class="dot" aria-label="Go to slide 3"></button>
+    </div>
+  </div>
+
+  <div class="hero-overlay">
+    <div class="hero-card">
+      <h1>Manage Teams. Schedule Games. Win Together.</h1>
+      <p>All-in-one sports management: fixtures, payments, communication, and player availability—streamlined for coaches, managers, and athletes.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn primary">Get Started</a>
+        <a href="#about" class="btn ghost">Learn More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIVE UPDATES + REMINDERS -->
+<section id="updates" class="shell">
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">📡 Live Updates</h3>
+        <span class="pill live">LIVE</span>
+      </div>
+      <div class="ticker" aria-live="polite">
+        <div class="ticker-inner" id="ticker">
+          <div class="tick"> <span class="pill upd">Update</span> U18 match moved to 5:30 PM due to weather.</div>
+          <div class="tick"> <span class="pill info">Info</span> New kits arrive Friday—collect from the admin desk.</div>
+          <div class="tick"> <span class="pill upd">Update</span> Training ground B closed for maintenance today.</div>
+          <div class="tick"> <span class="pill info">Info</span> Bus pickup for away game at 7:45 AM sharp.</div>
+        </div>
+      </div>
+      <div style="padding:14px 16px; color:var(--muted); font-size:14px">These rotate automatically. Add your real-time feed here.</div>
+    </div>
+
+    <div id="reminders" class="card">
+      <div class="card-header">
+        <h3 class="card-title">⏰ Player Reminders</h3>
+        <span class="pill info">Auto</span>
+      </div>
+      <div class="reminders" id="reminderList">
+        <!-- JS fills reminders -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="shell">
+  <div class="about card" style="padding:18px;">
+    <div>
+      <h2 style="margin:6px 0 8px; color:var(--brand)">About SportsManage</h2>
+      <p class="lead">We help clubs and academies streamline the season: fixtures, attendance, communication, payments, and performance—with less admin and more play.</p>
+      <ul class="icon-list">
+        <li><span class="check">✔</span> Smart scheduling, clash detection, and venue maps</li>
+        <li><span class="check">✔</span> Team chat, announcements, and coach dashboards</li>
+        <li><span class="check">✔</span> Secure online payments and fee tracking</li>
+        <li><span class="check">✔</span> Availability polls and automatic reminders</li>
+      </ul>
+      <div style="margin-top:14px;">
+        <a class="btn" style="background:var(--brand); color:#fff" href="#contact">Talk to us</a>
+      </div>
+    </div>
+    <div>
+      <img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?q=80&w=1400&auto=format&fit=crop" alt="Basketball court aerial">
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="shell">
+  <h2 style="margin:0 0 14px; color:var(--brand)">What Teams Say</h2>
+  <div class="testi-grid">
+    <div class="testi">
+      <div class="stars">★★★★★</div>
+      <p>“Scheduling conflicts dropped to almost zero. Parents love the reminders!”</p>
+      <div class="author">
+        <img class="avatar" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop" alt="Coach">
+        <div>
+          <strong>Coach Rivera</strong><br>
+          <small class="muted">U14 Head Coach</small>
+        </div>
+      </div>
+    </div>
+    <div class="testi">
+      <div class="stars">★★★★★</div>
+      <p>“Fee collection is painless now. The dashboard saves hours every week.”</p>
+      <div class="author">
+        <img class="avatar" src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2f?q=80&w=200&auto=format&fit=crop" alt="Manager">
+        <div>
+          <strong>Samir Gupta</strong><br>
+          <small class="muted">Club Manager</small>
+        </div>
+      </div>
+    </div>
+    <div class="testi">
+      <div class="stars">★★★★★</div>
+      <p>“Communication is finally centralized. No more lost messages across apps.”</p>
+      <div class="author">
+        <img class="avatar" src="https://images.unsplash.com/photo-1544005316-04ae1f04c6f7?q=80&w=200&auto=format&fit=crop" alt="Captain">
+        <div>
+          <strong>Ana Martins</strong><br>
+          <small class="muted">Women’s Team Captain</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="shell">
+  <h2 style="margin:0 0 14px; color:var(--brand)">Contact Us</h2>
+  <div class="contact">
+    <form id="contactForm" novalidate>
+      <div class="row">
+        <div>
+          <label for="name">Full Name</label>
+          <input id="name" type="text" placeholder="Alex Johnson" required>
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="you@example.com" required>
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <label for="team">Team / Club</label>
+          <input id="team" type="text" placeholder="Falcons FC">
+        </div>
+        <div>
+          <label for="phone">Phone</label>
+          <input id="phone" type="tel" placeholder="+91 98765 43210">
+        </div>
+      </div>
+      <div style="margin-top:12px">
+        <label for="msg">Message</label>
+        <textarea id="msg" placeholder="Tell us what you need help with…"></textarea>
+      </div>
+      <button class="btn submit" type="submit">Send Message</button>
+      <div id="contactNote" style="margin-top:8px; font-size:14px; color:var(--muted)"></div>
+    </form>
+
+    <div class="contact-card">
+      <h3 style="margin:0 0 8px; color:var(--brand)">Reach us</h3>
+      <div class="contact-item">
+        <span class="dot"></span>
+        <div>
+          <strong>Email</strong><br>
+          support@sportsmanage.com
+        </div>
+      </div>
+      <div class="contact-item">
+        <span class="dot"></span>
+        <div>
+          <strong>Phone</strong><br>
+          +91 80000 00000
+        </div>
+      </div>
+      <div class="contact-item">
+        <span class="dot"></span>
+        <div>
+          <strong>Office</strong><br>
+          21 Arena Road, Bengaluru, IN
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot">
+    <div class="logo">
+      <span class="dot"></span>
+      <span>SportsManage</span>
+    </div>
+    <div class="copy">© <span id="year"></span> SportsManage. All rights reserved.</div>
+    <div><a href="#home">Back to top ↑</a></div>
+  </div>
+</footer>
+
+<script>
+  // ---------- Slideshow ----------
+  (function(){
+    const slides = [...document.querySelectorAll('.slide')];
+    const dots = [...document.querySelectorAll('.dot')];
+    let idx = 0, timer;
+
+    function show(i){
+      slides.forEach(s=>s.classList.remove('active'));
+      dots.forEach(d=>d.classList.remove('active'));
+      slides[i].classList.add('active');
+      dots[i].classList.add('active');
+      idx = i;
+    }
+    function next(){ show((idx+1)%slides.length); }
+    function prev(){ show((idx-1+slides.length)%slides.length); }
+    function start(){ timer = setInterval(next, 4500); }
+    function stop(){ clearInterval(timer); }
+
+    document.getElementById('next').addEventListener('click', ()=>{ stop(); next(); start(); });
+    document.getElementById('prev').addEventListener('click', ()=>{ stop(); prev(); start(); });
+    dots.forEach((d,i)=> d.addEventListener('click', ()=>{ stop(); show(i); start(); }));
+
+    start();
+  })();
+
+  // ---------- Reminders ----------
+  const reminders = [
+    { title:'Bring ID & jersey', when:'Today 6:00 PM', deltaHours: 2 },
+    { title:'Fitness test – Field A', when:'Tomorrow 7:00 AM', deltaHours: 14 },
+    { title:'League match vs Hawks', when:'Sat 5:30 PM', deltaHours: 48 },
+    { title:'Fee deadline', when:'Mon 11:59 PM', deltaHours: 96 }
+  ];
+  const remEl = document.getElementById('reminderList');
+  reminders.forEach(r=>{
+    const soon = r.deltaHours <= 6;
+    const badge = soon ? '<span class="badge" style="background:#fee2e2;color:#991b1b">Due soon</span>' :
+                         '<span class="badge">Upcoming</span>';
+    const row = document.createElement('div');
+    row.className='reminder';
+    row.innerHTML = `
+      <div>
+        <div class="rem-title">${r.title}</div>
+        <div class="rem-meta">${r.when}</div>
+      </div>
+      ${badge}
+    `;
+    remEl.appendChild(row);
+  });
+
+  // ---------- Contact form (demo) ----------
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const note = document.getElementById('contactNote');
+    if(!name || !email){
+      note.style.color = '#dc2626';
+      note.textContent = 'Please provide your name and a valid email.';
+      return;
+    }
+    note.style.color = '#16a34a';
+    note.textContent = 'Thanks! Your message has been sent (demo).';
+    this.reset();
+  });
+
+  // ---------- Year ----------
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+
+
+<footer>
+  <div class="container">
+    <section class="footer-links" aria-label="Quick Links">
+      <h3>Quick Links</h3>
+      <ul>
+       <li><a href="index.html">Home</a></li>
+        <li><a href="sche.html">Schedules & Game Details</a></li>
+        <li><a href="communi.html">Communication with Team</a></li>
+        <li><a href="access.chtml">Access Resources</a></li>
+        <li><a href="payments.html">Payments</a></li>
+        <li><a href="news.html">News & Updates</a></li>
+        <li><a href="results.html">Results & Standings</a></li>
+        <li><a href="join.html">Join in Community</a></li>
+        <li><a href="login.html">Login / Sign In</a></li>
+      </ul>
+    </section>
+
+    <section class="social-links" aria-label="Social Media">
+      <h3>Follow Us</h3>
+      <a href="#" aria-label="Facebook" title="Facebook" target="_blank" rel="noopener noreferrer">📘</a>
+      <a href="#" aria-label="Twitter" title="Twitter" target="_blank" rel="noopener noreferrer">🐦</a>
+      <a href="#" aria-label="Instagram" title="Instagram" target="_blank" rel="noopener noreferrer">📸</a>
+      <a href="#" aria-label="LinkedIn" title="LinkedIn" target="_blank" rel="noopener noreferrer">🔗</a>
+    </section>
+
+    <section class="footer-info" aria-label="About">
+      <h3>About SportsManage</h3>
+      <p>
+        SportsManage is your all-in-one online platform for managing teams, schedules, communication, payments, and community engagement for sports enthusiasts.
+      </p>
+      <p>Contact us: support@sportsmanage.com</p>
+      <p>&copy; 2025 SportsManage. All rights reserved.</p>
+    </section>
+  </div>
+</footer>
+
+</body>
+</html>

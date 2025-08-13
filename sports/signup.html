@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sports Management Website</title>
+<style>
+  /* Reset & basics */
+  * {
+    box-sizing: border-box;
+  }
+ body {
+  margin: 0; 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+
+  background-image: url('https://img.freepik.com/free-photo/sports-tools_53876-138077.jpg?semt=ais_hybrid&w=740&q=80');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* keeps image fixed while scrolling */
+
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+
+  /* Header styles */
+  header {
+    background: #004080;
+    color: white;
+    padding: 1rem 2rem;
+    background: rgba(0, 64, 128, 0.85);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+
+  /* Nav styles */
+  nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav ul li {
+    margin-left: 1.5rem;
+  }
+
+  nav ul li:first-child {
+    margin-left: 0;
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+
+  nav a:hover, nav a:focus {
+    color: #ffcc00;
+    outline: none;
+  }
+
+  /* Responsive Nav */
+  @media (max-width: 768px) {
+    nav ul {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    nav ul li {
+      margin: 0.5rem 1rem;
+    }
+  }
+
+  /* Signup form box */
+  .form-container {
+    background: white;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 10px;
+    width: 350px;
+    margin: 2rem auto;
+  }
+  h2 {
+    text-align: center;
+    color: #333;
+  }
+  .input-group {
+    margin-bottom: 15px;
+  }
+  .input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  .input-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  button {
+    width: 100%;
+    padding: 10px;
+    background: #2b5876;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  button:hover {
+    background: #1e3c52;
+  }
+  .link {
+    text-align: center;
+    margin-top: 10px;
+  }
+  .link a {
+    color: #2b5876;
+    text-decoration: none;
+  }
+  .link a:hover {
+    text-decoration: underline;
+  }
+
+  /* Footer styles */
+  footer {
+    background: #222;
+    color: #ccc;
+    padding: 2rem 1.5rem;
+    margin-top: auto;
+  }
+
+  footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  footer .footer-links, 
+  footer .social-links, 
+  footer .footer-info {
+    flex: 1 1 250px;
+    margin: 0.5rem 1rem;
+  }
+
+  footer h3 {
+    color: #ffcc00;
+    margin-bottom: 1rem;
+  }
+
+  footer ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  footer ul li {
+    margin-bottom: 0.5rem;
+  }
+
+  footer ul li a {
+    color: #ccc;
+    text-decoration: none;
+  }
+
+  footer ul li a:hover, footer ul li a:focus {
+    color: #ffcc00;
+    outline: none;
+  }
+
+  footer .social-links a {
+    display: inline-block;
+    margin-right: 1rem;
+    font-size: 1.5rem;
+    color: #ccc;
+    transition: color 0.3s ease;
+    text-decoration: none;
+  }
+
+  footer .social-links a:hover, footer .social-links a:focus {
+    color: #ffcc00;
+    outline: none;
+  }
+
+  /* Small devices */
+  @media (max-width: 600px) {
+    footer .container {
+      flex-direction: column;
+      align-items: center;
+    }
+    footer .footer-links, 
+    footer .social-links, 
+    footer .footer-info {
+      margin: 1rem 0;
+      text-align: center;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1>SportsManage</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="sche.html">Schedules & Game Details</a></li>
+        <li><a href="communi.html">Communication with Team</a></li>
+        <li><a href="access.chtml">Access Resources</a></li>
+        <li><a href="payments.html">Payments</a></li>
+        <li><a href="news.html">News & Updates</a></li>
+        <li><a href="resultshtml">Results & Standings</a></li>
+        <li><a href="join.html">Join in Community</a></li>
+        <li><a href="login.html">Login / Sign In</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="form-container">
+    <h2>Create Your Account</h2>
+    <form id="signupForm">
+      <div class="input-group">
+        <label for="signupName">Full Name</label>
+        <input type="text" id="signupName" required>
+      </div>
+      <div class="input-group">
+        <label for="signupEmail">Email</label>
+        <input type="email" id="signupEmail" required>
+      </div>
+      <div class="input-group">
+        <label for="signupPassword">Password</label>
+        <input type="password" id="signupPassword" required>
+      </div>
+      <div class="input-group">
+        <label for="signupConfirm">Confirm Password</label>
+        <input type="password" id="signupConfirm" required>
+      </div>
+      <button type="submit">Sign Up</button>
+      <p class="link">Already have an account? <a href="login.html">Login</a></p>
+    </form>
+</div>
+
+<script>
+  document.getElementById('signupForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    let name = document.getElementById('signupName').value.trim();
+    let email = document.getElementById('signupEmail').value.trim();
+    let password = document.getElementById('signupPassword').value.trim();
+    let confirmPassword = document.getElementById('signupConfirm').value.trim();
+
+    if (name === "" || email === "" || password === "" || confirmPassword === "") {
+      alert("Please fill in all fields.");
+      return;
+    }
+    if (password !== confirmPassword) {
+      alert("Passwords do not match!");
+      return;
+    }
+    alert("Signup successful (demo). You can now log in.");
+  });
+</script>
+
+<footer>
+  <div class="container">
+    <section class="footer-links" aria-label="Quick Links">
+      <h3>Quick Links</h3>
+      <ul>
+       <li><a href="index.html">Home</a></li>
+        <li><a href="sche.html">Schedules & Game Details</a></li>
+        <li><a href="communi.html">Communication with Team</a></li>
+        <li><a href="access.chtml">Access Resources</a></li>
+        <li><a href="payments.html">Payments</a></li>
+        <li><a href="news.html">News & Updates</a></li>
+        <li><a href="results.html">Results & Standings</a></li>
+        <li><a href="join.html">Join in Community</a></li>
+        <li><a href="login.html">Login / Sign In</a></li>
+      </ul>
+    </section>
+
+    <section class="social-links" aria-label="Social Media">
+      <h3>Follow Us</h3>
+      <a href="#" aria-label="Facebook" title="Facebook" target="_blank" rel="noopener noreferrer">📘</a>
+      <a href="#" aria-label="Twitter" title="Twitter" target="_blank" rel="noopener noreferrer">🐦</a>
+      <a href="#" aria-label="Instagram" title="Instagram" target="_blank" rel="noopener noreferrer">📸</a>
+      <a href="#" aria-label="LinkedIn" title="LinkedIn" target="_blank" rel="noopener noreferrer">🔗</a>
+    </section>
+
+    <section class="footer-info" aria-label="About">
+      <h3>About SportsManage</h3>
+      <p>
+        SportsManage is your all-in-one online platform for managing teams, schedules, communication, payments, and community engagement for sports enthusiasts.
+      </p>
+      <p>Contact us: support@sportsmanage.com</p>
+      <p>&copy; 2025 SportsManage. All rights reserved.</p>
+    </section>
+  </div>
+</footer>
+
+</body>
+</html>
